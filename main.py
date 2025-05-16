@@ -7,8 +7,8 @@ import folium
 
 # --- PARAMETRY ---
 LICZBA_KURIEROW = 3            # liczba kurierów
-ROZMIAR_POPULACJI = 6000       # rozmiar populacji
-LICZBA_POKOLEN = 200           # liczba pokoleń
+ROZMIAR_POPULACJI = 4000       # rozmiar populacji
+LICZBA_POKOLEN = 300           # liczba pokoleń
 P_MUTACJI = 0.2                # prawdopodobieństwo mutacji
 TURNIEJ_SIZE = 5               # liczba uczestników turnieju
 ALPHA_KARA = 0.02              # przyrost kary (alpha)
@@ -35,11 +35,11 @@ def API_paczkomaty():
     Pobranie listy paczkomatow z API i uzycie funkcji haversine
     """
     url = "https://api-shipx-pl.easypack24.net/v1/points"
-    params = {"per_page": 10000, "type": "parcel_locker", "city": "Lubin"}
+    params = {"per_page": 10000, "type": "parcel_locker", "city": "Skierniewice"}
     response = requests.get(url, params=params)
     points = response.json()
 
-    lokalizacje = [(51.39936510651588, 16.205476630389562)]  # sortownia
+    lokalizacje = [(51.97268626554747, 20.184125364417767)]  # sortownia
     if 'items' in points:
         for item in points['items']:
             lokalizacje.append((item['location']['latitude'], item['location']['longitude']))
