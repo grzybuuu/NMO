@@ -13,6 +13,7 @@ P_MUTACJI = 0.2                # prawdopodobieństwo mutacji
 TURNIEJ_SIZE = 5               # liczba uczestników turnieju
 ALPHA_KARA = 0.02              # przyrost kary (alpha)
 MAX_CZAS = 480                 # maksymalny czas pracy kuriera (min)
+MIN_CZAS = 180                 # minimalny czas pracy kuriera (min)
 CZAS_POSTOJU = 20              # czas postoju kuriera przy paczkomacie (min)
 
 
