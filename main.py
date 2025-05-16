@@ -111,7 +111,7 @@ def koszt_trasy(osobnik, dist_matrix, pokolenie=0, alpha=ALPHA_KARA):
                     koszt += dist_matrix[podtrasa[i]][podtrasa[i + 1]]
                 koszt += dist_matrix[podtrasa[-1]][0]
                 czas = czas_trasy(podtrasa, dist_matrix)
-                kara_kuriera = kara if czas > MAX_CZAS else 0
+                kara_kuriera = kara if (czas > MAX_CZAS or czas < MIN_CZAS) else 0
                 laczny_koszt += koszt
                 laczna_kara += kara_kuriera
                 podtrasa = []
